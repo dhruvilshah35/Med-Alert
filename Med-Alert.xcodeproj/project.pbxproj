@@ -1,0 +1,602 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2ED443022398341C0088781F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED443012398341C0088781F /* AppDelegate.swift */; };
+		2ED443042398341C0088781F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED443032398341C0088781F /* ViewController.swift */; };
+		2ED443072398341C0088781F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ED443052398341C0088781F /* Main.storyboard */; };
+		2ED4430A2398341C0088781F /* Med_Alert.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2ED443082398341C0088781F /* Med_Alert.xcdatamodeld */; };
+		2ED4430C2398341D0088781F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ED4430B2398341D0088781F /* Assets.xcassets */; };
+		2ED4430F2398341D0088781F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ED4430D2398341D0088781F /* LaunchScreen.storyboard */; };
+		2ED4431A2398341D0088781F /* Med_AlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED443192398341D0088781F /* Med_AlertTests.swift */; };
+		2ED443252398341D0088781F /* Med_AlertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED443242398341D0088781F /* Med_AlertUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2ED443162398341D0088781F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2ED442F62398341C0088781F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2ED442FD2398341C0088781F;
+			remoteInfo = "Med-Alert";
+		};
+		2ED443212398341D0088781F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2ED442F62398341C0088781F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2ED442FD2398341C0088781F;
+			remoteInfo = "Med-Alert";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2ED442FE2398341C0088781F /* Med-Alert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Med-Alert.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2ED443012398341C0088781F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2ED443032398341C0088781F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2ED443062398341C0088781F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2ED443092398341C0088781F /* Med_Alert.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Med_Alert.xcdatamodel; sourceTree = "<group>"; };
+		2ED4430B2398341D0088781F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2ED4430E2398341D0088781F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2ED443102398341D0088781F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2ED443152398341D0088781F /* Med-AlertTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Med-AlertTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2ED443192398341D0088781F /* Med_AlertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Med_AlertTests.swift; sourceTree = "<group>"; };
+		2ED4431B2398341D0088781F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2ED443202398341D0088781F /* Med-AlertUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Med-AlertUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2ED443242398341D0088781F /* Med_AlertUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Med_AlertUITests.swift; sourceTree = "<group>"; };
+		2ED443262398341D0088781F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2ED442FB2398341C0088781F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2ED443122398341D0088781F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2ED4431D2398341D0088781F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2ED442F52398341C0088781F = {
+			isa = PBXGroup;
+			children = (
+				2ED443002398341C0088781F /* Med-Alert */,
+				2ED443182398341D0088781F /* Med-AlertTests */,
+				2ED443232398341D0088781F /* Med-AlertUITests */,
+				2ED442FF2398341C0088781F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2ED442FF2398341C0088781F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2ED442FE2398341C0088781F /* Med-Alert.app */,
+				2ED443152398341D0088781F /* Med-AlertTests.xctest */,
+				2ED443202398341D0088781F /* Med-AlertUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2ED443002398341C0088781F /* Med-Alert */ = {
+			isa = PBXGroup;
+			children = (
+				2ED443012398341C0088781F /* AppDelegate.swift */,
+				2ED443032398341C0088781F /* ViewController.swift */,
+				2ED443052398341C0088781F /* Main.storyboard */,
+				2ED4430B2398341D0088781F /* Assets.xcassets */,
+				2ED4430D2398341D0088781F /* LaunchScreen.storyboard */,
+				2ED443102398341D0088781F /* Info.plist */,
+				2ED443082398341C0088781F /* Med_Alert.xcdatamodeld */,
+			);
+			path = "Med-Alert";
+			sourceTree = "<group>";
+		};
+		2ED443182398341D0088781F /* Med-AlertTests */ = {
+			isa = PBXGroup;
+			children = (
+				2ED443192398341D0088781F /* Med_AlertTests.swift */,
+				2ED4431B2398341D0088781F /* Info.plist */,
+			);
+			path = "Med-AlertTests";
+			sourceTree = "<group>";
+		};
+		2ED443232398341D0088781F /* Med-AlertUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2ED443242398341D0088781F /* Med_AlertUITests.swift */,
+				2ED443262398341D0088781F /* Info.plist */,
+			);
+			path = "Med-AlertUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2ED442FD2398341C0088781F /* Med-Alert */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2ED443292398341D0088781F /* Build configuration list for PBXNativeTarget "Med-Alert" */;
+			buildPhases = (
+				2ED442FA2398341C0088781F /* Sources */,
+				2ED442FB2398341C0088781F /* Frameworks */,
+				2ED442FC2398341C0088781F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Med-Alert";
+			productName = "Med-Alert";
+			productReference = 2ED442FE2398341C0088781F /* Med-Alert.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2ED443142398341D0088781F /* Med-AlertTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2ED4432C2398341D0088781F /* Build configuration list for PBXNativeTarget "Med-AlertTests" */;
+			buildPhases = (
+				2ED443112398341D0088781F /* Sources */,
+				2ED443122398341D0088781F /* Frameworks */,
+				2ED443132398341D0088781F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2ED443172398341D0088781F /* PBXTargetDependency */,
+			);
+			name = "Med-AlertTests";
+			productName = "Med-AlertTests";
+			productReference = 2ED443152398341D0088781F /* Med-AlertTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2ED4431F2398341D0088781F /* Med-AlertUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2ED4432F2398341D0088781F /* Build configuration list for PBXNativeTarget "Med-AlertUITests" */;
+			buildPhases = (
+				2ED4431C2398341D0088781F /* Sources */,
+				2ED4431D2398341D0088781F /* Frameworks */,
+				2ED4431E2398341D0088781F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2ED443222398341D0088781F /* PBXTargetDependency */,
+			);
+			name = "Med-AlertUITests";
+			productName = "Med-AlertUITests";
+			productReference = 2ED443202398341D0088781F /* Med-AlertUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2ED442F62398341C0088781F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = Dhruvil;
+				TargetAttributes = {
+					2ED442FD2398341C0088781F = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					2ED443142398341D0088781F = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 2ED442FD2398341C0088781F;
+					};
+					2ED4431F2398341D0088781F = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 2ED442FD2398341C0088781F;
+					};
+				};
+			};
+			buildConfigurationList = 2ED442F92398341C0088781F /* Build configuration list for PBXProject "Med-Alert" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2ED442F52398341C0088781F;
+			productRefGroup = 2ED442FF2398341C0088781F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2ED442FD2398341C0088781F /* Med-Alert */,
+				2ED443142398341D0088781F /* Med-AlertTests */,
+				2ED4431F2398341D0088781F /* Med-AlertUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2ED442FC2398341C0088781F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2ED4430F2398341D0088781F /* LaunchScreen.storyboard in Resources */,
+				2ED4430C2398341D0088781F /* Assets.xcassets in Resources */,
+				2ED443072398341C0088781F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2ED443132398341D0088781F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2ED4431E2398341D0088781F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2ED442FA2398341C0088781F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2ED4430A2398341C0088781F /* Med_Alert.xcdatamodeld in Sources */,
+				2ED443042398341C0088781F /* ViewController.swift in Sources */,
+				2ED443022398341C0088781F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2ED443112398341D0088781F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2ED4431A2398341D0088781F /* Med_AlertTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2ED4431C2398341D0088781F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2ED443252398341D0088781F /* Med_AlertUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2ED443172398341D0088781F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2ED442FD2398341C0088781F /* Med-Alert */;
+			targetProxy = 2ED443162398341D0088781F /* PBXContainerItemProxy */;
+		};
+		2ED443222398341D0088781F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2ED442FD2398341C0088781F /* Med-Alert */;
+			targetProxy = 2ED443212398341D0088781F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2ED443052398341C0088781F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2ED443062398341C0088781F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2ED4430D2398341D0088781F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2ED4430E2398341D0088781F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2ED443272398341D0088781F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2ED443282398341D0088781F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2ED4432A2398341D0088781F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Med-Alert/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Med-Alert";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2ED4432B2398341D0088781F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Med-Alert/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Med-Alert";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2ED4432D2398341D0088781F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Med-AlertTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Med-AlertTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Med-Alert.app/Med-Alert";
+			};
+			name = Debug;
+		};
+		2ED4432E2398341D0088781F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Med-AlertTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Med-AlertTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Med-Alert.app/Med-Alert";
+			};
+			name = Release;
+		};
+		2ED443302398341D0088781F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Med-AlertUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Med-AlertUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Med-Alert";
+			};
+			name = Debug;
+		};
+		2ED443312398341D0088781F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Med-AlertUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Med-AlertUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Med-Alert";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2ED442F92398341C0088781F /* Build configuration list for PBXProject "Med-Alert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2ED443272398341D0088781F /* Debug */,
+				2ED443282398341D0088781F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2ED443292398341D0088781F /* Build configuration list for PBXNativeTarget "Med-Alert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2ED4432A2398341D0088781F /* Debug */,
+				2ED4432B2398341D0088781F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2ED4432C2398341D0088781F /* Build configuration list for PBXNativeTarget "Med-AlertTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2ED4432D2398341D0088781F /* Debug */,
+				2ED4432E2398341D0088781F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2ED4432F2398341D0088781F /* Build configuration list for PBXNativeTarget "Med-AlertUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2ED443302398341D0088781F /* Debug */,
+				2ED443312398341D0088781F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2ED443082398341C0088781F /* Med_Alert.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2ED443092398341C0088781F /* Med_Alert.xcdatamodel */,
+			);
+			currentVersion = 2ED443092398341C0088781F /* Med_Alert.xcdatamodel */;
+			path = Med_Alert.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 2ED442F62398341C0088781F /* Project object */;
+}
