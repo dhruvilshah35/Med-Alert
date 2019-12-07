@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		2ED443022398341C0088781F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED443012398341C0088781F /* AppDelegate.swift */; };
-		2ED443042398341C0088781F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED443032398341C0088781F /* ViewController.swift */; };
 		2ED443072398341C0088781F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ED443052398341C0088781F /* Main.storyboard */; };
 		2ED4430A2398341C0088781F /* Med_Alert.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2ED443082398341C0088781F /* Med_Alert.xcdatamodeld */; };
 		2ED4430C2398341D0088781F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ED4430B2398341D0088781F /* Assets.xcassets */; };
 		2ED4430F2398341D0088781F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ED4430D2398341D0088781F /* LaunchScreen.storyboard */; };
 		2ED4431A2398341D0088781F /* Med_AlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED443192398341D0088781F /* Med_AlertTests.swift */; };
 		2ED443252398341D0088781F /* Med_AlertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED443242398341D0088781F /* Med_AlertUITests.swift */; };
+		2ED443332398652E0088781F /* MyMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED443322398652E0088781F /* MyMedicineViewController.swift */; };
+		2ED4433523986A650088781F /* MedicineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED4433423986A650088781F /* MedicineDetailViewController.swift */; };
+		2ED44339239872AB0088781F /* AllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED44338239872AB0088781F /* AllTableViewCell.swift */; };
+		2ED4433D2398813C0088781F /* DosePerWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED4433C2398813C0088781F /* DosePerWeekViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,6 @@
 /* Begin PBXFileReference section */
 		2ED442FE2398341C0088781F /* Med-Alert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Med-Alert.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED443012398341C0088781F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2ED443032398341C0088781F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2ED443062398341C0088781F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2ED443092398341C0088781F /* Med_Alert.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Med_Alert.xcdatamodel; sourceTree = "<group>"; };
 		2ED4430B2398341D0088781F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		2ED443202398341D0088781F /* Med-AlertUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Med-AlertUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED443242398341D0088781F /* Med_AlertUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Med_AlertUITests.swift; sourceTree = "<group>"; };
 		2ED443262398341D0088781F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2ED443322398652E0088781F /* MyMedicineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMedicineViewController.swift; sourceTree = "<group>"; };
+		2ED4433423986A650088781F /* MedicineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailViewController.swift; sourceTree = "<group>"; };
+		2ED44338239872AB0088781F /* AllTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTableViewCell.swift; sourceTree = "<group>"; };
+		2ED4433C2398813C0088781F /* DosePerWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DosePerWeekViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +106,10 @@
 			isa = PBXGroup;
 			children = (
 				2ED443012398341C0088781F /* AppDelegate.swift */,
-				2ED443032398341C0088781F /* ViewController.swift */,
+				2ED443322398652E0088781F /* MyMedicineViewController.swift */,
+				2ED4433423986A650088781F /* MedicineDetailViewController.swift */,
+				2ED4433C2398813C0088781F /* DosePerWeekViewController.swift */,
+				2ED44338239872AB0088781F /* AllTableViewCell.swift */,
 				2ED443052398341C0088781F /* Main.storyboard */,
 				2ED4430B2398341D0088781F /* Assets.xcassets */,
 				2ED4430D2398341D0088781F /* LaunchScreen.storyboard */,
@@ -259,9 +268,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ED4433D2398813C0088781F /* DosePerWeekViewController.swift in Sources */,
 				2ED4430A2398341C0088781F /* Med_Alert.xcdatamodeld in Sources */,
-				2ED443042398341C0088781F /* ViewController.swift in Sources */,
+				2ED4433523986A650088781F /* MedicineDetailViewController.swift in Sources */,
+				2ED44339239872AB0088781F /* AllTableViewCell.swift in Sources */,
 				2ED443022398341C0088781F /* AppDelegate.swift in Sources */,
+				2ED443332398652E0088781F /* MyMedicineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
