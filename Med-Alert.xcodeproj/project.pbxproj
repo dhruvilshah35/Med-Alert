@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2ECC8621239B854E00AC7BFE /* details.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ECC8620239B854E00AC7BFE /* details.plist */; };
 		2ED443022398341C0088781F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED443012398341C0088781F /* AppDelegate.swift */; };
 		2ED443072398341C0088781F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ED443052398341C0088781F /* Main.storyboard */; };
 		2ED4430A2398341C0088781F /* Med_Alert.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2ED443082398341C0088781F /* Med_Alert.xcdatamodeld */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2ECC8620239B854E00AC7BFE /* details.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = details.plist; sourceTree = "<group>"; };
 		2ED442FE2398341C0088781F /* Med-Alert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Med-Alert.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED443012398341C0088781F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2ED443062398341C0088781F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				2ED4430B2398341D0088781F /* Assets.xcassets */,
 				2ED4430D2398341D0088781F /* LaunchScreen.storyboard */,
 				2ED443102398341D0088781F /* Info.plist */,
+				2ECC8620239B854E00AC7BFE /* details.plist */,
 				2ED443082398341C0088781F /* Med_Alert.xcdatamodeld */,
 			);
 			path = "Med-Alert";
@@ -242,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ED4430F2398341D0088781F /* LaunchScreen.storyboard in Resources */,
+				2ECC8621239B854E00AC7BFE /* details.plist in Resources */,
 				2ED4430C2398341D0088781F /* Assets.xcassets in Resources */,
 				2ED443072398341C0088781F /* Main.storyboard in Resources */,
 			);

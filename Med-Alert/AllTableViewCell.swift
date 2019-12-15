@@ -12,4 +12,7 @@ class AllTableViewCell: UITableViewCell
 {
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var selectedLabel: UILabel!
+    @IBOutlet weak var weekdays: UILabel!
+    @IBOutlet weak var medName: UILabel!
+    @IBOutlet weak var timer: UILabel!
 }

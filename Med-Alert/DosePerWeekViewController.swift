@@ -7,182 +7,119 @@
 //
 
 import UIKit
+import CoreData
+
+var selectedcell = [Int]()
 
 class DosePerWeekViewController: UIViewController
 {
-    @IBOutlet weak var weekstack: UIStackView!
-    @IBOutlet weak var monday: UIButton!
-    @IBOutlet weak var tuesday: UIButton!
-    @IBOutlet weak var wednesday: UIButton!
-    @IBOutlet weak var thursday: UIButton!
-    @IBOutlet weak var friday: UIButton!
-    @IBOutlet weak var saturday: UIButton!
-    @IBOutlet weak var sunday: UIButton!
-    @IBOutlet weak var weekdayPicker: UIPickerView!
-    
-    let doseOption: [String] = ["Daily","Optional"]
-    var code: Int = 0
-    var lastPickerValue: String = "Daily"
+    @IBOutlet weak var tableView: UITableView!
+    var weekdays: [String]?
+    var selectedWeekday: String = ""
     override func viewDidLoad()
     {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButton))
-        weekstack.isHidden = true
-        weekdayPicker.delegate = self
-        weekdayPicker.dataSource = self
+        if let thirdCol = getPlist()
+        {
+            weekdays = thirdCol
+        }
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.tableView.allowsMultipleSelection = true
+        self.tableView.allowsMultipleSelectionDuringEditing = true
         super.viewDidLoad()
     }
     
     @objc func doneButton(sender: UIBarButtonItem)
     {
-        if lastPickerValue != "Daily" && code == 0
+        selectedWeekday = ""
+        selectedcell.sort()
+        for weekday in selectedcell
         {
-             let alert = UIAlertController(title: "Error", message: "Please select atleast one", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        } else
-        {
-            self.performSegue(withIdentifier: "unwindByWeek", sender: self)
+            selectedWeekday = selectedWeekday + String(weekday + 1)
         }
+        if let _ = globalname
+        {
+            updateReminder()
+        }
+        performSegue(withIdentifier: "unwindByWeek", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         let DestVC = segue.destination as! MedicineDetailViewController
-        if lastPickerValue == "Daily"
-        {
-            DestVC.dosePerWeek = lastPickerValue
-        } else
-        {
-            DestVC.dosePerWeek = String(code)
-        }
+        DestVC.weekdayString = selectedWeekday
+        DestVC.viewDidLoad()
     }
-    @IBAction func mondayButtonClicked(_ sender: Any)
+    
+    func updateReminder()
     {
-        if monday.backgroundColor != UIColor.red
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>.init(entityName: "Medicine")
+        fetchRequest.predicate = NSPredicate(format: "name = %@", globalname!)
+        do
         {
-            code = code + 1
-            monday.backgroundColor = UIColor.red
-        } else
+            let test = try managedContext.fetch(fetchRequest)
+            let object = test[0] as! NSManagedObject
+            object.setValue(selectedWeekday, forKey: "week")
+            do
+            {
+                try managedContext.save()
+                print("update successfully")
+            } catch
+            {
+                print(error)
+            }
+        } catch
         {
-            code = code - 1
-            monday.backgroundColor = UIColor.white
+            print(error)
         }
     }
     
-    @IBAction func tuesdayButtonClicked(_ sender: Any)
+    func getPlist() -> [String]?
     {
-        if tuesday.backgroundColor != UIColor.red
+        if  let path = Bundle.main.path(forResource: "details", ofType: "plist"),
+            let xml = FileManager.default.contents(atPath: path)
         {
-            code = code + 10
-            tuesday.backgroundColor = UIColor.red
-        } else
-        {
-            code = code + 10
-            tuesday.backgroundColor = UIColor.white
+            return (try? PropertyListSerialization.propertyList(from: xml, options: .mutableContainersAndLeaves, format: nil)) as? [String]
         }
+        
+        return nil
+    }
+}
+extension DosePerWeekViewController: UITableViewDelegate, UITableViewDataSource
+{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        if let weekHasValue = weekdays
+        {
+            return weekHasValue.count
+        }
+        return 0
     }
     
-    @IBAction func wednesdayButtonClicked(_ sender: Any)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        if wednesday.backgroundColor != UIColor.red
+        let cell = tableView.dequeueReusableCell(withIdentifier: "weekdays") as! AllTableViewCell
+        if let weekdayHasValue = weekdays
         {
-            code = code + 100
-            wednesday.backgroundColor = UIColor.red
-        } else
-        {
-            code = code + 100
-            wednesday.backgroundColor = UIColor.white
+            cell.weekdays.text = weekdayHasValue[indexPath.row]
         }
+        cell.accessoryType = selectedcell.contains(indexPath.row) ? .checkmark : .none
+        return cell
     }
-    
-    @IBAction func thursdayButtonClicked(_ sender: Any)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        if thursday.backgroundColor != UIColor.red
+        if selectedcell.contains(indexPath.row)
         {
-            code = code + 1000
-            thursday.backgroundColor = UIColor.red
-        } else
-        {
-            code = code + 1000
-            thursday.backgroundColor = UIColor.white
-        }
-    }
-    
-    @IBAction func fridayButtonClicked(_ sender: Any)
-    {
-        if friday.backgroundColor != UIColor.red
-        {
-            code = code + 10000
-            friday.backgroundColor = UIColor.red
-        } else
-        {
-            code = code + 1000
-            thursday.backgroundColor = UIColor.white
-        }
-    }
-    
-    @IBAction func saturdayButtonClicked(_ sender: Any)
-    {
-        if saturday.backgroundColor != UIColor.red
-        {
-            code = code + 100000
-            saturday.backgroundColor = UIColor.red
-        } else
-        {
-            code = code + 100000
-            saturday.backgroundColor = UIColor.white
-        }
-    }
-    
-    @IBAction func sundayButtonClicked(_ sender: Any)
-    {
-        if sunday.backgroundColor != UIColor.red
-        {
-            code = code + 1000000
-            sunday.backgroundColor = UIColor.red
+            let myIndex = selectedcell.firstIndex(of: indexPath.row)
+            selectedcell.remove(at: myIndex!)
         }
         else
         {
-            code = code + 100000
-            saturday.backgroundColor = UIColor.white
+            selectedcell.append(indexPath.row)
         }
+        tableView.reloadData()
     }
-}
-extension DosePerWeekViewController: UIPickerViewDelegate, UIPickerViewDataSource
-{
-    func numberOfComponents(in pickerView: UIPickerView) -> Int
-    {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
-    {
-        return doseOption.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
-    {
-        return doseOption[row]
-    }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
-    {
-        if doseOption[row] == "Optional"
-        {
-            weekstack.isHidden = false
-            lastPickerValue = ""
-        }else
-        {
-            weekstack.isHidden = true
-            code = 0
-            monday.backgroundColor = UIColor.white
-            tuesday.backgroundColor = UIColor.white
-            wednesday.backgroundColor = UIColor.white
-            thursday.backgroundColor = UIColor.white
-            friday.backgroundColor = UIColor.white
-            saturday.backgroundColor = UIColor.white
-            sunday.backgroundColor = UIColor.white
-        }
-    }
-    
-    
 }
