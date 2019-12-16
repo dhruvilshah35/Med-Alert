@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import UserNotifications
 
-class MedicineDetailViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate
+class MedicineDetailViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate
 {
     @IBOutlet weak var medName: UITextField!
     @IBOutlet weak var specificNote: UITextField!
@@ -38,12 +38,15 @@ class MedicineDetailViewController: UIViewController,UIImagePickerControllerDele
     
     override func viewDidLoad()
     {
+        configureTapGesture()
          self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButton))
         imagePicker.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
         picker.delegate = self
         picker.dataSource = self
+        medName.delegate = self
+        specificNote.delegate = self
         picker.tag = 1
         super.viewDidLoad()
         labelList()
@@ -51,6 +54,31 @@ class MedicineDetailViewController: UIViewController,UIImagePickerControllerDele
         {
             retrieve()
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        let nextTag = textField.tag + 1
+        if let nextResponder = textField.superview?.viewWithTag(nextTag)
+        {
+            nextResponder.becomeFirstResponder()
+        }
+        else
+        {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    func configureTapGesture()
+    {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(MedicineDetailViewController.handleTap))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func handleTap()
+    {
+        view.endEditing(true)
     }
     
     func retrieve()

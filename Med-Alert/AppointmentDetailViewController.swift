@@ -10,7 +10,7 @@ import UIKit
 import UserNotifications
 import CoreData
 
-class AppointmentDetailViewController: UIViewController
+class AppointmentDetailViewController: UIViewController, UITextFieldDelegate
 {
     @IBOutlet weak var appointmentName: UITextField!
     @IBOutlet weak var doctorName: UITextField!
@@ -21,12 +21,40 @@ class AppointmentDetailViewController: UIViewController
     
     override func viewDidLoad()
     {
+        appointmentName.delegate = self
+        doctorName.delegate = self
+        note.delegate = self
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButton))
         if let _ = globalAppointmentName
         {
             retrieveData()
         }
         super.viewDidLoad()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        let nextTag = textField.tag + 1
+        if let nextResponder = textField.superview?.viewWithTag(nextTag)
+        {
+            nextResponder.becomeFirstResponder()
+        }
+        else
+        {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    func configureTapGesture()
+    {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(AppointmentDetailViewController.handleTap))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func handleTap()
+    {
+        view.endEditing(true)
     }
     
     func retrieveData()
