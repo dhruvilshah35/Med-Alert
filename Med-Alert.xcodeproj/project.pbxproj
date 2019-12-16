@@ -12,6 +12,7 @@
 		2E4A907923A75DF0001B0090 /* HealthCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4A907823A75DF0001B0090 /* HealthCalculatorViewController.swift */; };
 		2E4A907B23A76A75001B0090 /* BMIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4A907A23A76A75001B0090 /* BMIViewController.swift */; };
 		2E4A907D23A775C9001B0090 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4A907C23A775C9001B0090 /* InfoViewController.swift */; };
+		2E4A907F23A802DB001B0090 /* BMRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4A907E23A802DB001B0090 /* BMRViewController.swift */; };
 		2ECC8621239B854E00AC7BFE /* details.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ECC8620239B854E00AC7BFE /* details.plist */; };
 		2ED443022398341C0088781F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED443012398341C0088781F /* AppDelegate.swift */; };
 		2ED443072398341C0088781F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ED443052398341C0088781F /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		2E4A907823A75DF0001B0090 /* HealthCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCalculatorViewController.swift; sourceTree = "<group>"; };
 		2E4A907A23A76A75001B0090 /* BMIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIViewController.swift; sourceTree = "<group>"; };
 		2E4A907C23A775C9001B0090 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		2E4A907E23A802DB001B0090 /* BMRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMRViewController.swift; sourceTree = "<group>"; };
 		2ECC8620239B854E00AC7BFE /* details.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = details.plist; sourceTree = "<group>"; };
 		2ED442FE2398341C0088781F /* Med-Alert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Med-Alert.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED443012398341C0088781F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				2E4A907623A6FCCE001B0090 /* AppointmentDetailViewController.swift */,
 				2E4A907823A75DF0001B0090 /* HealthCalculatorViewController.swift */,
 				2E4A907A23A76A75001B0090 /* BMIViewController.swift */,
+				2E4A907E23A802DB001B0090 /* BMRViewController.swift */,
 				2E4A907C23A775C9001B0090 /* InfoViewController.swift */,
 				2ED44338239872AB0088781F /* AllTableViewCell.swift */,
 				2ED443052398341C0088781F /* Main.storyboard */,
@@ -293,6 +296,7 @@
 				2E4A907723A6FCCE001B0090 /* AppointmentDetailViewController.swift in Sources */,
 				2E4A907B23A76A75001B0090 /* BMIViewController.swift in Sources */,
 				2E4A907523A6FBFA001B0090 /* AddAppointmentViewController.swift in Sources */,
+				2E4A907F23A802DB001B0090 /* BMRViewController.swift in Sources */,
 				2ED4430A2398341C0088781F /* Med_Alert.xcdatamodeld in Sources */,
 				2ED4433523986A650088781F /* MedicineDetailViewController.swift in Sources */,
 				2ED44339239872AB0088781F /* AllTableViewCell.swift in Sources */,

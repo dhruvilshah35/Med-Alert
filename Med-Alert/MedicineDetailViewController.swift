@@ -177,7 +177,9 @@ class MedicineDetailViewController: UIViewController,UIImagePickerControllerDele
                 }
             }else
             {
-                print("Some selections are missing")
+                let alert = UIAlertController(title: "Error", message: "Please enter all the details", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true,completion: nil)
             }
         }
     }
@@ -201,7 +203,7 @@ class MedicineDetailViewController: UIViewController,UIImagePickerControllerDele
         let center = UNUserNotificationCenter.current()
         let content = UNMutableNotificationContent()
         content.title = "Medicine Reminder"
-        content.body = "Time to take \(medName.text ?? "") medicine"
+        content.body = "Time to take \"\(medName.text ?? "")\" medicine"
         content.sound = .default
         if dosePerWeek == "Daily"
         {
@@ -392,7 +394,7 @@ extension MedicineDetailViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "medLabels") as! AllTableViewCell
-        tableView.rowHeight = 120
+        tableView.rowHeight = 80
         cell.labelName.text = tableList[indexPath.row]
         cell.selectedLabel.text = rightTableList[indexPath.row]
         cell.accessoryType = .disclosureIndicator

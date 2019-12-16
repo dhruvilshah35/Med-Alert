@@ -27,7 +27,7 @@ class BMIViewController: UIViewController
         } else if calc == "Ideal Weight Calculator"
         {
             pounds.isEnabled = false
-            textView.text = "We have used following formula:\n\nB. J. Devine Formula (1974)= 50.0 kg + 2.3 kg per inch over 5 feet\n\n In pounds = 110.23 pound + 5.07 per inch over 5 feet"
+            textView.text = "The Ideal Weight Calculator computes ideal bodyweight (IBW) ranges based on height. It gives you an idea of what hsould be the ideal weight according to your height. We have used following formula:\n\nB. J. Devine Formula (1974)= 50.0 kg + 2.3 kg per inch over 5 feet\n\n In pounds = 110.23 pound + 5.07 per inch over 5 feet."
         }
         super.viewDidLoad()
     }
@@ -51,12 +51,16 @@ class BMIViewController: UIViewController
                     answer.text = "Ideal Weight = " + String(110.23 + (5.07 * Double(feets! + inch!))) + " Pounds"
                 } else
                 {
-                    print("Error - 2")
+                    let alert = UIAlertController(title: "Error", message: "Feet should be greater than 5", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true,completion: nil)
                 }
             }
         }else
         {
-            print("Error - 1")
+            let alert = UIAlertController(title: "Error", message: "Please enter all the details", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true,completion: nil)
         }
         viewDidLoad()
     }

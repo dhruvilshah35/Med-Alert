@@ -34,15 +34,23 @@ class DosePerWeekViewController: UIViewController
     {
         selectedWeekday = ""
         selectedcell.sort()
-        for weekday in selectedcell
+        if selectedcell.count != 0
         {
-            selectedWeekday = selectedWeekday + String(weekday + 1)
-        }
-        if let _ = globalname
+            for weekday in selectedcell
+            {
+                selectedWeekday = selectedWeekday + String(weekday + 1)
+            }
+            if let _ = globalname
+            {
+                updateReminder()
+            }
+            performSegue(withIdentifier: "unwindByWeek", sender: self)
+        } else
         {
-            updateReminder()
+            let alert = UIAlertController(title: "Error", message: "Please enter all the details", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true,completion: nil)
         }
-        performSegue(withIdentifier: "unwindByWeek", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)

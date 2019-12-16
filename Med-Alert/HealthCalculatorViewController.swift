@@ -44,12 +44,18 @@ extension HealthCalculatorViewController: UITableViewDelegate, UITableViewDataSo
         }else if indexPath.row == 2
         {
             performSegue(withIdentifier: "calc", sender: self)
+        }else if indexPath.row == 1
+        {
+            performSegue(withIdentifier: "bmr", sender: self)
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        let DestVC = segue.destination as! BMIViewController
-        DestVC.calc = calculator[selected.row]
+        if segue.identifier == "calc"
+        {
+            let DestVC = segue.destination as! BMIViewController
+            DestVC.calc = calculator[selected.row]
+        }
     }
     
 }

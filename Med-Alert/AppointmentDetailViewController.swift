@@ -151,7 +151,9 @@ class AppointmentDetailViewController: UIViewController, UITextFieldDelegate
             }
         }else
         {
-            print("Some selections are missing")
+            let alert = UIAlertController(title: "Error", message: "Please enter all the details", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true,completion: nil)
         }
     }
     
