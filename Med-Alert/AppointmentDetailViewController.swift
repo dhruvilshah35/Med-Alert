@@ -114,7 +114,7 @@ class AppointmentDetailViewController: UIViewController, UITextFieldDelegate
         let center = UNUserNotificationCenter.current()
         let content = UNMutableNotificationContent()
         content.title = "Appointment Reminder"
-        content.body = "You have an Appointment at \(strDate) with \n \(doctorName.text!)"
+        content.body = "You have an Appointment on \(strDate) with \n \(doctorName.text!)"
         content.sound = .default
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
