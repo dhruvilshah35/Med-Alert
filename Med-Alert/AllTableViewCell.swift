@@ -15,4 +15,6 @@ class AllTableViewCell: UITableViewCell
     @IBOutlet weak var weekdays: UILabel!
     @IBOutlet weak var medName: UILabel!
     @IBOutlet weak var timer: UILabel!
+    @IBOutlet weak var appointmentName: UILabel!
+    @IBOutlet weak var appointmentAlarm: UILabel!
 }

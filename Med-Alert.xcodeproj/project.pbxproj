@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E4A907523A6FBFA001B0090 /* AddAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4A907423A6FBFA001B0090 /* AddAppointmentViewController.swift */; };
+		2E4A907723A6FCCE001B0090 /* AppointmentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4A907623A6FCCE001B0090 /* AppointmentDetailViewController.swift */; };
 		2ECC8621239B854E00AC7BFE /* details.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ECC8620239B854E00AC7BFE /* details.plist */; };
 		2ED443022398341C0088781F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED443012398341C0088781F /* AppDelegate.swift */; };
 		2ED443072398341C0088781F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ED443052398341C0088781F /* Main.storyboard */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E4A907423A6FBFA001B0090 /* AddAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAppointmentViewController.swift; sourceTree = "<group>"; };
+		2E4A907623A6FCCE001B0090 /* AppointmentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDetailViewController.swift; sourceTree = "<group>"; };
 		2ECC8620239B854E00AC7BFE /* details.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = details.plist; sourceTree = "<group>"; };
 		2ED442FE2398341C0088781F /* Med-Alert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Med-Alert.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED443012398341C0088781F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				2ED443322398652E0088781F /* MyMedicineViewController.swift */,
 				2ED4433423986A650088781F /* MedicineDetailViewController.swift */,
 				2ED4433C2398813C0088781F /* DosePerWeekViewController.swift */,
+				2E4A907423A6FBFA001B0090 /* AddAppointmentViewController.swift */,
+				2E4A907623A6FCCE001B0090 /* AppointmentDetailViewController.swift */,
 				2ED44338239872AB0088781F /* AllTableViewCell.swift */,
 				2ED443052398341C0088781F /* Main.storyboard */,
 				2ED4430B2398341D0088781F /* Assets.xcassets */,
@@ -273,6 +279,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ED4433D2398813C0088781F /* DosePerWeekViewController.swift in Sources */,
+				2E4A907723A6FCCE001B0090 /* AppointmentDetailViewController.swift in Sources */,
+				2E4A907523A6FBFA001B0090 /* AddAppointmentViewController.swift in Sources */,
 				2ED4430A2398341C0088781F /* Med_Alert.xcdatamodeld in Sources */,
 				2ED4433523986A650088781F /* MedicineDetailViewController.swift in Sources */,
 				2ED44339239872AB0088781F /* AllTableViewCell.swift in Sources */,

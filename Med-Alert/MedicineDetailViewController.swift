@@ -33,7 +33,6 @@ class MedicineDetailViewController: UIViewController,UIImagePickerControllerDele
     var min: String?
     var period: Int?
     var weekdayString: String?
-  //  var optionalWeekday = [String]()
     var encodedImage: String?
     var decodedImage: String?
     
@@ -78,6 +77,10 @@ class MedicineDetailViewController: UIViewController,UIImagePickerControllerDele
             let decodedData = NSData(base64Encoded: im, options: NSData.Base64DecodingOptions.ignoreUnknownCharacters)
             let iconValue:UIImage? = UIImage(data: decodedData! as Data) ?? nil
             image.image = iconValue
+        }
+        if dosePerWeek != "Daily"
+        {
+            dosePerWeek = "Optional"
         }
         labelList()
         tableView.reloadData()
@@ -134,6 +137,7 @@ class MedicineDetailViewController: UIViewController,UIImagePickerControllerDele
                 detail.day = dosePerDay
                 detail.week = dosePerWeek
                 detail.timer = alarm
+                detail.isComplete = false
                 do
                 {
                     try managedContext.save()
@@ -169,12 +173,12 @@ class MedicineDetailViewController: UIViewController,UIImagePickerControllerDele
         let center = UNUserNotificationCenter.current()
         let content = UNMutableNotificationContent()
         content.title = "Medicine Reminder"
-        content.body = "Time to take medicine"
+        content.body = "Time to take \(medName.text ?? "") medicine"
         content.sound = .default
         if dosePerWeek == "Daily"
         {
             let trigger = UNCalendarNotificationTrigger(dateMatching: comp, repeats: true)
-            let request = UNNotificationRequest(identifier: "Reminder", content: content, trigger: trigger)
+            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
             center.add(request, withCompletionHandler: nil)
         } else
         {
@@ -188,11 +192,11 @@ class MedicineDetailViewController: UIViewController,UIImagePickerControllerDele
                 dateInfo.timeZone = .current
                 
                 let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: true)
-                let request = UNNotificationRequest(identifier: "Reminder", content: content, trigger: trigger)
+                let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
                 center.add(request, withCompletionHandler: nil)
-                let request1 = UNNotificationRequest(identifier: "Reminder", content: content, trigger: trigger1)
-                center.add(request1, withCompletionHandler: nil)
             }
+            let request1 = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger1)
+            center.add(request1, withCompletionHandler: nil)
         }
     }
     
@@ -219,7 +223,7 @@ class MedicineDetailViewController: UIViewController,UIImagePickerControllerDele
         {
             rightTableList.append("")
         }
-        if let week = weekdayString
+        if let week = dosePerWeek
         {
             rightTableList.append(week)
         }else
@@ -364,6 +368,7 @@ extension MedicineDetailViewController: UITableViewDelegate, UITableViewDataSour
         cell.labelName.text = tableList[indexPath.row]
         cell.selectedLabel.text = rightTableList[indexPath.row]
         cell.accessoryType = .disclosureIndicator
+        
         return cell
     }
     
