@@ -12,6 +12,7 @@ class HealthCalculatorViewController: UIViewController
 {
     @IBOutlet weak var tableView: UITableView!
     var calculator = ["Body Mass Index","Basal Metabolic Rate","Ideal Weight Calculator"]
+    var selected = IndexPath()
     override func viewDidLoad()
     {
         tableView.delegate = self
@@ -34,4 +35,21 @@ extension HealthCalculatorViewController: UITableViewDelegate, UITableViewDataSo
         cell.accessoryType = .disclosureIndicator
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        selected = indexPath
+        if indexPath.row == 0
+        {
+            performSegue(withIdentifier: "calc", sender: self)
+        }else if indexPath.row == 2
+        {
+            performSegue(withIdentifier: "calc", sender: self)
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        let DestVC = segue.destination as! BMIViewController
+        DestVC.calc = calculator[selected.row]
+    }
+    
 }

@@ -11,6 +11,7 @@
 		2E4A907723A6FCCE001B0090 /* AppointmentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4A907623A6FCCE001B0090 /* AppointmentDetailViewController.swift */; };
 		2E4A907923A75DF0001B0090 /* HealthCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4A907823A75DF0001B0090 /* HealthCalculatorViewController.swift */; };
 		2E4A907B23A76A75001B0090 /* BMIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4A907A23A76A75001B0090 /* BMIViewController.swift */; };
+		2E4A907D23A775C9001B0090 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4A907C23A775C9001B0090 /* InfoViewController.swift */; };
 		2ECC8621239B854E00AC7BFE /* details.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2ECC8620239B854E00AC7BFE /* details.plist */; };
 		2ED443022398341C0088781F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED443012398341C0088781F /* AppDelegate.swift */; };
 		2ED443072398341C0088781F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ED443052398341C0088781F /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		2E4A907623A6FCCE001B0090 /* AppointmentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDetailViewController.swift; sourceTree = "<group>"; };
 		2E4A907823A75DF0001B0090 /* HealthCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCalculatorViewController.swift; sourceTree = "<group>"; };
 		2E4A907A23A76A75001B0090 /* BMIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIViewController.swift; sourceTree = "<group>"; };
+		2E4A907C23A775C9001B0090 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		2ECC8620239B854E00AC7BFE /* details.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = details.plist; sourceTree = "<group>"; };
 		2ED442FE2398341C0088781F /* Med-Alert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Med-Alert.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED443012398341C0088781F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,8 @@
 				2E4A907423A6FBFA001B0090 /* AddAppointmentViewController.swift */,
 				2E4A907623A6FCCE001B0090 /* AppointmentDetailViewController.swift */,
 				2E4A907823A75DF0001B0090 /* HealthCalculatorViewController.swift */,
+				2E4A907A23A76A75001B0090 /* BMIViewController.swift */,
+				2E4A907C23A775C9001B0090 /* InfoViewController.swift */,
 				2ED44338239872AB0088781F /* AllTableViewCell.swift */,
 				2ED443052398341C0088781F /* Main.storyboard */,
 				2ED4430B2398341D0088781F /* Assets.xcassets */,
@@ -129,7 +133,6 @@
 				2ED443102398341D0088781F /* Info.plist */,
 				2ECC8620239B854E00AC7BFE /* details.plist */,
 				2ED443082398341C0088781F /* Med_Alert.xcdatamodeld */,
-				2E4A907A23A76A75001B0090 /* BMIViewController.swift */,
 			);
 			path = "Med-Alert";
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ED4433D2398813C0088781F /* DosePerWeekViewController.swift in Sources */,
+				2E4A907D23A775C9001B0090 /* InfoViewController.swift in Sources */,
 				2E4A907923A75DF0001B0090 /* HealthCalculatorViewController.swift in Sources */,
 				2E4A907723A6FCCE001B0090 /* AppointmentDetailViewController.swift in Sources */,
 				2E4A907B23A76A75001B0090 /* BMIViewController.swift in Sources */,
