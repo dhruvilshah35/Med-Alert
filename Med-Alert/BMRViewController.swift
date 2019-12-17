@@ -28,6 +28,10 @@ class BMRViewController: UIViewController, UITextFieldDelegate
         
         self.title = "Basal Metabolic Rate"
         textView.text = "The basal metabolic rate (BMR) is the amount of energy needed while resting in a temperate environment when the digestive system is inactive."
+        self.feet.keyboardType = UIKeyboardType.decimalPad
+        self.inches.keyboardType = UIKeyboardType.decimalPad
+        self.pounds.keyboardType = UIKeyboardType.decimalPad
+        self.age.keyboardType = UIKeyboardType.decimalPad
         super.viewDidLoad()
     }
     

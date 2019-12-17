@@ -33,6 +33,9 @@ class BMIViewController: UIViewController, UITextFieldDelegate
             pounds.isEnabled = false
             textView.text = "The Ideal Weight Calculator computes ideal bodyweight (IBW) ranges based on height. It gives you an idea of what hsould be the ideal weight according to your height. We have used following formula:\n\nB. J. Devine Formula (1974)= 50.0 kg + 2.3 kg per inch over 5 feet\n\n In pounds = 110.23 pound + 5.07 per inch over 5 feet."
         }
+        self.feet.keyboardType = UIKeyboardType.decimalPad
+        self.inches.keyboardType = UIKeyboardType.decimalPad
+        self.pounds.keyboardType = UIKeyboardType.decimalPad
         super.viewDidLoad()
     }
     
