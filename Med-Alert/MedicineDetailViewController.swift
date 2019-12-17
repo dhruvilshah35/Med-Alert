@@ -35,6 +35,7 @@ class MedicineDetailViewController: UIViewController,UIImagePickerControllerDele
     var weekdayString: String?
     var encodedImage: String?
     var decodedImage: String?
+    var unique: String?
     
     override func viewDidLoad()
     {
@@ -98,7 +99,7 @@ class MedicineDetailViewController: UIViewController,UIImagePickerControllerDele
             weekdayString = data.value(forKey: "week") as? String ?? ""
             specificNote.text = data.value(forKey: "note") as? String ?? ""
             decodedImage = data.value(forKey: "image") as? String ?? ""
-            
+            unique = data.value(forKey: "identifier") as? String ?? ""
         }
         if let decoded = decodedImage
         {
@@ -131,11 +132,11 @@ class MedicineDetailViewController: UIViewController,UIImagePickerControllerDele
             object.setValue(dosePerWeek, forKey: "week")
             object.setValue(encodedImage, forKey: "image")
             object.setValue(alarm, forKey: "timer")
+            object.setValue(unique, forKey: "identifier")
             do
             {
                 try managedContext.save()
                 print("update successfully")
-                performSegue(withIdentifier: "mainMed", sender: self)
             } catch
             {
                 print(error)
@@ -148,40 +149,46 @@ class MedicineDetailViewController: UIViewController,UIImagePickerControllerDele
     
     @IBAction func unwindToMedDetail(segue:UIStoryboardSegue) {}
     
+    func saveData()
+    {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        if medName.text != "" && dosePerDay != nil && alarm != nil
+        {
+            let detail = Medicine(context: managedContext)
+            detail.name = medName.text
+            detail.note = specificNote.text
+            detail.image = encodedImage
+            detail.day = dosePerDay
+            detail.week = dosePerWeek
+            detail.timer = alarm
+            detail.isComplete = false
+            detail.identifier = unique
+            do
+            {
+                try managedContext.save()
+                print("Save Successfully")
+                performSegue(withIdentifier: "mainMed", sender: self)
+            }catch
+            {
+                print("Error at save")
+            }
+        }else
+        {
+            let alert = UIAlertController(title: "Error", message: "Please enter all the details", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true,completion: nil)
+        }
+    }
     @objc func doneButton()
     {
         if globalname != nil
         {
             updateReminder()
+            performSegue(withIdentifier: "mainMed", sender: self)
         } else
         {
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-            let managedContext = appDelegate.persistentContainer.viewContext
-            if medName.text != "" && dosePerDay != nil && alarm != nil
-            {
-                let detail = Medicine(context: managedContext)
-                detail.name = medName.text
-                detail.note = specificNote.text
-                detail.image = encodedImage
-                detail.day = dosePerDay
-                detail.week = dosePerWeek
-                detail.timer = alarm
-                detail.isComplete = false
-                do
-                {
-                    try managedContext.save()
-                    print("Save Successfully")
-                    performSegue(withIdentifier: "mainMed", sender: self)
-                }catch
-                {
-                    print("Error at save")
-                }
-            }else
-            {
-                let alert = UIAlertController(title: "Error", message: "Please enter all the details", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self.present(alert, animated: true,completion: nil)
-            }
+           saveData()
         }
     }
     
@@ -208,12 +215,15 @@ class MedicineDetailViewController: UIViewController,UIImagePickerControllerDele
         content.sound = .default
         if dosePerWeek == "Daily"
         {
+            let uniqueString = UUID().uuidString
+            unique = uniqueString
             let trigger = UNCalendarNotificationTrigger(dateMatching: comp, repeats: true)
-            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+            let request = UNNotificationRequest(identifier: unique!, content: content, trigger: trigger)
             center.add(request, withCompletionHandler: nil)
-        } else
+            labelList()
+            
+        } else if dosePerWeek == "Optional"
         {
-            let trigger1 = UNCalendarNotificationTrigger(dateMatching: comp, repeats: true)
             for element in optionalWeekday
             {
                 var dateInfo = DateComponents()
@@ -221,13 +231,21 @@ class MedicineDetailViewController: UIViewController,UIImagePickerControllerDele
                 dateInfo.minute = comp.minute!
                 dateInfo.weekday = Int(element)!
                 dateInfo.timeZone = .current
-                
+                let uniqueString = UUID().uuidString
+                unique = uniqueString
                 let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: true)
-                let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                let request = UNNotificationRequest(identifier: uniqueString, content: content, trigger: trigger)
                 center.add(request, withCompletionHandler: nil)
             }
-            let request1 = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger1)
-            center.add(request1, withCompletionHandler: nil)
+            labelList()
+        } else
+        {
+            let alert = UIAlertController(title: "Error", message: "Please select weekdays", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {
+                _ in
+                self.dosePerWeek = nil
+            }))
+            self.present(alert, animated: true,completion: nil)
         }
     }
     
@@ -417,6 +435,10 @@ extension MedicineDetailViewController: UITableViewDelegate, UITableViewDataSour
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {
                 _ in
+                if globalname != nil
+                {
+                    self.updateReminder()
+                }
                 self.viewDidLoad()
             }))
             self.present(alert,animated: true, completion: nil)
@@ -451,7 +473,7 @@ extension MedicineDetailViewController: UITableViewDelegate, UITableViewDataSour
                 {
                     self.alarm = isHour + ":" + isMin + " " + self.light[isPeriod]
                     self.timers()
-                    self.labelList()
+                    
                 }else
                 {
                     let alert = UIAlertController(title: "Error", message: "Please enter valid time", preferredStyle: .alert)

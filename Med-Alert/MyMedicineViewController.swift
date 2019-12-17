@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 var globalname: String?
 
@@ -18,11 +19,14 @@ class MyMedicineViewController: UIViewController
     var timerList = [String]()
     var isComplete: Bool?
     var status = [Bool]()
+    var uniqueString = [String]()
+    
     override func viewDidLoad()
     {
         medName = []
         timerList = []
         status = []
+        uniqueString = []
         tableView.delegate = self
         tableView.dataSource = self
         super.viewDidLoad()
@@ -35,7 +39,6 @@ class MyMedicineViewController: UIViewController
     @IBAction func addMedicineButton(_ sender: Any)
     {
         globalname = nil
-        selectedcell = []
         performSegue(withIdentifier: "addMed", sender: self)
     }
     
@@ -50,6 +53,7 @@ class MyMedicineViewController: UIViewController
             medName.append(data.value(forKey: "name") as! String)
             timerList.append(data.value(forKey: "timer") as! String)
             status.append(data.value(forKey: "isComplete") as! Bool)
+            uniqueString.append(data.value(forKey: "identifier") as! String)
         }
         tableView.reloadData()
     }
@@ -92,6 +96,7 @@ extension MyMedicineViewController: UITableViewDelegate, UITableViewDataSource
         alert.addAction(UIAlertAction(title: "Complete", style: .default, handler: {
             (action) in
             globalname = self.medName[indexPath.row]
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [self.uniqueString[indexPath.row]])
             self.retrieveStatus()
             self.updateData()
         }))

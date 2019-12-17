@@ -9,13 +9,13 @@
 import UIKit
 import CoreData
 
-var selectedcell = [Int]()
-
 class DosePerWeekViewController: UIViewController
 {
     @IBOutlet weak var tableView: UITableView!
     var weekdays: [String]?
     var selectedWeekday: String = ""
+    var selectedcell = [Int]()
+    
     override func viewDidLoad()
     {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButton))
@@ -57,6 +57,7 @@ class DosePerWeekViewController: UIViewController
     {
         let DestVC = segue.destination as! MedicineDetailViewController
         DestVC.weekdayString = selectedWeekday
+        print(selectedWeekday)
         DestVC.viewDidLoad()
     }
     
