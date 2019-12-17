@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BMIViewController: UIViewController
+class BMIViewController: UIViewController, UITextFieldDelegate
 {
 
     @IBOutlet weak var feet: UITextField!
@@ -20,6 +20,10 @@ class BMIViewController: UIViewController
     var calc: String?
     override func viewDidLoad()
     {
+        feet.delegate = self
+        inches.delegate = self
+        pounds.delegate = self
+        
         self.title = calc ?? ""
         if calc == "Body Mass Index"
         {
@@ -31,6 +35,33 @@ class BMIViewController: UIViewController
         }
         super.viewDidLoad()
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        let nextTag = textField.tag + 1
+        if let nextResponder = textField.superview?.viewWithTag(nextTag)
+        {
+            nextResponder.becomeFirstResponder()
+        }
+        else
+        {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    func configureTapGesture()
+    {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(BMIViewController.handleTap))
+        tap.cancelsTouchesInView = false;
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func handleTap()
+    {
+        view.endEditing(true)
+    }
+    
     @IBAction func calculateButton(_ sender: Any)
     {
         if feet.text != "" && inches.text != ""

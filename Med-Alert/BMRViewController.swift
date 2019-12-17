@@ -8,9 +8,8 @@
 
 import UIKit
 
-class BMRViewController: UIViewController
+class BMRViewController: UIViewController, UITextFieldDelegate
 {
-    
     @IBOutlet weak var age: UITextField!
     @IBOutlet weak var feet: UITextField!
     @IBOutlet weak var inches: UITextField!
@@ -22,11 +21,42 @@ class BMRViewController: UIViewController
     
     override func viewDidLoad()
     {
+        age.delegate = self
+        feet.delegate = self
+        inches.delegate = self
+        pounds.delegate = self
+        
         self.title = "Basal Metabolic Rate"
         textView.text = "The basal metabolic rate (BMR) is the amount of energy needed while resting in a temperate environment when the digestive system is inactive."
         super.viewDidLoad()
     }
-
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        let nextTag = textField.tag + 1
+        if let nextResponder = textField.superview?.viewWithTag(nextTag)
+        {
+            nextResponder.becomeFirstResponder()
+        }
+        else
+        {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    func configureTapGesture()
+    {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(BMRViewController.handleTap))
+        tap.cancelsTouchesInView = false;
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func handleTap()
+    {
+        view.endEditing(true)
+    }
+    
     @IBAction func maleButton(_ sender: Any)
     {
         male.backgroundColor = .lightGray

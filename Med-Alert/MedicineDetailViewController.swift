@@ -55,7 +55,7 @@ class MedicineDetailViewController: UIViewController,UIImagePickerControllerDele
             retrieve()
         }
     }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         let nextTag = textField.tag + 1
@@ -69,13 +69,14 @@ class MedicineDetailViewController: UIViewController,UIImagePickerControllerDele
         }
         return true
     }
-    
+
     func configureTapGesture()
     {
         let tap = UITapGestureRecognizer(target: self, action: #selector(MedicineDetailViewController.handleTap))
+        tap.cancelsTouchesInView = false;
         view.addGestureRecognizer(tap)
     }
-    
+
     @objc func handleTap()
     {
         view.endEditing(true)
@@ -203,7 +204,7 @@ class MedicineDetailViewController: UIViewController,UIImagePickerControllerDele
         let center = UNUserNotificationCenter.current()
         let content = UNMutableNotificationContent()
         content.title = "Medicine Reminder"
-        content.body = "Time to take \"\(medName.text ?? "")\" medicine"
+        content.body = "Time to take \(medName.text ?? "") medicine"
         content.sound = .default
         if dosePerWeek == "Daily"
         {
@@ -404,7 +405,7 @@ extension MedicineDetailViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        if tableList[indexPath.row] == tableList[0]
+        if indexPath.row == 0
         {
             picker.tag = 2
             let alert = UIAlertController(title: "Dosage", message: "\n\n\n\n\n\n", preferredStyle: .alert)
@@ -420,10 +421,10 @@ extension MedicineDetailViewController: UITableViewDelegate, UITableViewDataSour
             }))
             self.present(alert,animated: true, completion: nil)
         }
-        else if tableList[indexPath.row] == tableList[1]
+        else if indexPath.row == 1
         {
-             let alert = UIAlertController(title: "", message: "Select any option", preferredStyle: .actionSheet)
-             alert.addAction(UIAlertAction(title: "Daily", style: .default, handler: { _ in
+            let alert = UIAlertController(title: "", message: "Select any option", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "Daily", style: .default, handler: { _ in
                 self.dosePerWeek = "Daily"
                 self.weekdayString = "Daily"
                 self.labelList()
@@ -433,7 +434,7 @@ extension MedicineDetailViewController: UITableViewDelegate, UITableViewDataSour
                 self.performSegue(withIdentifier: "segueToWeek", sender: self)
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-             self.present(alert, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: nil)
         }
         else
         {
