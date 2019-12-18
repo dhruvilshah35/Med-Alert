@@ -109,7 +109,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.91223420600000005" green="0.91223420600000005" blue="0.91223420600000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="hOG-w7-86n" firstAttribute="centerY" secondItem="aOY-qv-ffh" secondAttribute="centerY" id="ypU-dj-IEg"/>
                                     <constraint firstItem="hOG-w7-86n" firstAttribute="centerX" secondItem="aOY-qv-ffh" secondAttribute="centerX" id="z7b-kV-g90"/>
@@ -637,7 +637,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aaq-Ly-s57">
-                                <rect key="frame" x="0.0" y="108" width="375" height="267"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="371"/>
                                 <color key="backgroundColor" red="0.91223420600000005" green="0.91223420600000005" blue="0.91223420600000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="health" rowHeight="131" id="F7b-4p-zlb" customClass="AllTableViewCell" customModule="Med_Alert" customModuleProvider="target">
@@ -692,7 +692,7 @@
                             <constraint firstItem="aaq-Ly-s57" firstAttribute="leading" secondItem="uIw-Xn-WFN" secondAttribute="leading" id="aA8-lD-gUQ"/>
                             <constraint firstItem="uIw-Xn-WFN" firstAttribute="trailing" secondItem="aaq-Ly-s57" secondAttribute="trailing" id="hdK-PU-MCR"/>
                             <constraint firstItem="aaq-Ly-s57" firstAttribute="top" secondItem="uIw-Xn-WFN" secondAttribute="top" constant="20" id="nhW-l3-fPn"/>
-                            <constraint firstItem="uIw-Xn-WFN" firstAttribute="bottom" secondItem="aaq-Ly-s57" secondAttribute="bottom" constant="354" id="uCb-Eg-i6z"/>
+                            <constraint firstItem="uIw-Xn-WFN" firstAttribute="bottom" secondItem="aaq-Ly-s57" secondAttribute="bottom" constant="250" id="uCb-Eg-i6z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uIw-Xn-WFN"/>
                     </view>
@@ -860,7 +860,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sX3-kq-XBd">
-                                <rect key="frame" x="100" y="158" width="100" height="50"/>
+                                <rect key="frame" x="75" y="158" width="112.66666666666669" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="HNk-Hg-Nk3"/>
@@ -888,7 +888,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBh-7Y-xFL">
-                                <rect key="frame" x="200" y="158" width="100" height="50"/>
+                                <rect key="frame" x="187.66666666666666" y="158" width="112.33333333333334" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="a14-AH-qCr"/>
@@ -1023,7 +1023,7 @@
                             <constraint firstItem="1XH-Is-rBt" firstAttribute="trailing" secondItem="M9H-qL-09t" secondAttribute="trailing" constant="20" id="RDJ-IW-xMd"/>
                             <constraint firstItem="pBh-7Y-xFL" firstAttribute="centerY" secondItem="sX3-kq-XBd" secondAttribute="centerY" id="SBh-DV-Gc3"/>
                             <constraint firstItem="M9H-qL-09t" firstAttribute="top" secondItem="QJX-Pi-uzy" secondAttribute="bottom" constant="5" id="SM0-Kj-OIZ"/>
-                            <constraint firstItem="sX3-kq-XBd" firstAttribute="leading" secondItem="1XH-Is-rBt" secondAttribute="leading" constant="100" id="T6a-ZZ-LwQ"/>
+                            <constraint firstItem="sX3-kq-XBd" firstAttribute="leading" secondItem="1XH-Is-rBt" secondAttribute="leading" constant="75" id="T6a-ZZ-LwQ"/>
                             <constraint firstItem="1XH-Is-rBt" firstAttribute="trailing" secondItem="QJX-Pi-uzy" secondAttribute="trailing" constant="50" id="X1E-pZ-QbC"/>
                             <constraint firstItem="twp-zk-rWS" firstAttribute="centerY" secondItem="8Lu-W6-ClF" secondAttribute="centerY" id="Xpz-nO-Cvc"/>
                             <constraint firstItem="8Lu-W6-ClF" firstAttribute="centerY" secondItem="N5T-qj-yTD" secondAttribute="centerY" id="YZG-yK-y1D"/>

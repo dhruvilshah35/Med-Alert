@@ -59,7 +59,6 @@ class DosePerWeekViewController: UIViewController
     {
         let DestVC = segue.destination as! MedicineDetailViewController
         DestVC.weekdayString = selectedWeekday
-        print(selectedWeekday)
         DestVC.viewDidLoad()
     }
     

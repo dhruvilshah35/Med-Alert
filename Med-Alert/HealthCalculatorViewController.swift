@@ -31,7 +31,7 @@ extension HealthCalculatorViewController: UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        tableView.rowHeight = 100
+        tableView.rowHeight = 80
         let cell = tableView.dequeueReusableCell(withIdentifier: "health") as! AllTableViewCell
         cell.healthCalculator.text = calculator[indexPath.row]
         return cell

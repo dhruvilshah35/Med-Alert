@@ -414,7 +414,7 @@ extension MedicineDetailViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "medLabels") as! AllTableViewCell
-        tableView.rowHeight = 100
+        tableView.rowHeight = 80
         cell.labelName.text = tableList[indexPath.row]
         cell.selectedLabel.text = rightTableList[indexPath.row]
         return cell

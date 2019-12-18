@@ -80,6 +80,7 @@ extension AddAppointmentViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
+        tableView.deselectRow(at: indexPath, animated: true)
         let alert = UIAlertController(title: "Please select from following:", message: "", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Edit", style: .default, handler: { (action) in
             globalAppointmentName = self.appointments[indexPath.row]
