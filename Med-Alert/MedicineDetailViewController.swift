@@ -39,6 +39,8 @@ class MedicineDetailViewController: UIViewController,UIImagePickerControllerDele
     
     override func viewDidLoad()
     {
+        super.viewDidLoad()
+        self.title = "Medicines"
         configureTapGesture()
          self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButton))
         imagePicker.delegate = self
@@ -49,7 +51,6 @@ class MedicineDetailViewController: UIViewController,UIImagePickerControllerDele
         medName.delegate = self
         specificNote.delegate = self
         picker.tag = 1
-        super.viewDidLoad()
         labelList()
         if let _ = globalname
         {
@@ -413,16 +414,15 @@ extension MedicineDetailViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "medLabels") as! AllTableViewCell
-        tableView.rowHeight = 80
+        tableView.rowHeight = 100
         cell.labelName.text = tableList[indexPath.row]
         cell.selectedLabel.text = rightTableList[indexPath.row]
-        cell.accessoryType = .disclosureIndicator
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
+        tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 0
         {
             picker.tag = 2

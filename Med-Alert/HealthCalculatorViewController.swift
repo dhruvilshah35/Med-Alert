@@ -15,9 +15,11 @@ class HealthCalculatorViewController: UIViewController
     var selected = IndexPath()
     override func viewDidLoad()
     {
+        super.viewDidLoad()
+        self.title = "Health Calculators"
+        tableView.tableFooterView = UIView()
         tableView.delegate = self
         tableView.dataSource = self
-        super.viewDidLoad()
     }
 }
 extension HealthCalculatorViewController: UITableViewDelegate, UITableViewDataSource
@@ -32,11 +34,11 @@ extension HealthCalculatorViewController: UITableViewDelegate, UITableViewDataSo
         tableView.rowHeight = 100
         let cell = tableView.dequeueReusableCell(withIdentifier: "health") as! AllTableViewCell
         cell.healthCalculator.text = calculator[indexPath.row]
-        cell.accessoryType = .disclosureIndicator
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
+        tableView.deselectRow(at: indexPath, animated: true)
         selected = indexPath
         if indexPath.row == 0
         {

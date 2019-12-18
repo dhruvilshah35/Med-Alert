@@ -17,6 +17,5 @@ class AllTableViewCell: UITableViewCell
     @IBOutlet weak var timer: UILabel!
     @IBOutlet weak var appointmentName: UILabel!
     @IBOutlet weak var appointmentAlarm: UILabel!
-    @IBOutlet weak var healthCalculator: UILabel!
-    
+    @IBOutlet weak var healthCalculator: UILabel!    
 }

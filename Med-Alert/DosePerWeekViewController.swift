@@ -18,6 +18,9 @@ class DosePerWeekViewController: UIViewController
     
     override func viewDidLoad()
     {
+        super.viewDidLoad()
+        self.title = "Weekdays"
+        tableView.tableFooterView = UIView()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButton))
         if let thirdCol = getPlist()
         {
@@ -27,7 +30,6 @@ class DosePerWeekViewController: UIViewController
         tableView.dataSource = self
         self.tableView.allowsMultipleSelection = true
         self.tableView.allowsMultipleSelectionDuringEditing = true
-        super.viewDidLoad()
     }
     
     @objc func doneButton(sender: UIBarButtonItem)
@@ -115,6 +117,7 @@ extension DosePerWeekViewController: UITableViewDelegate, UITableViewDataSource
         {
             cell.weekdays.text = weekdayHasValue[indexPath.row]
         }
+        tableView.rowHeight = 80
         cell.accessoryType = selectedcell.contains(indexPath.row) ? .checkmark : .none
         return cell
     }

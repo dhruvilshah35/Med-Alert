@@ -15,17 +15,21 @@ class AddAppointmentViewController: UIViewController
 {
     @IBOutlet weak var addAppointment: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyView: UIView!
+    
     var appointments = [String]()
     var timer = [String]()
     
     override func viewDidLoad()
     {
+        super.viewDidLoad()
+        self.title = "Appointments"
+        tableView.tableFooterView = UIView()
         appointments = []
         timer = []
         tableView.delegate = self
         tableView.dataSource = self
         retrieveData()
-        super.viewDidLoad()
     }
     
     @IBAction func unwindToAppointment(segue:UIStoryboardSegue) {}
@@ -46,6 +50,15 @@ class AddAppointmentViewController: UIViewController
         {
             appointments.append(data.value(forKey: "aName") as! String)
             timer.append(data.value(forKey: "alarm") as! String)
+        }
+        if appointments.isEmpty
+        {
+            emptyView.isHidden = false
+            tableView.isHidden = true
+        } else
+        {
+            emptyView.isHidden = true
+            tableView.isHidden = false
         }
         tableView.reloadData()
     }

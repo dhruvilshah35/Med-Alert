@@ -21,6 +21,8 @@ class AppointmentDetailViewController: UIViewController, UITextFieldDelegate
     
     override func viewDidLoad()
     {
+         super.viewDidLoad()
+        self.title = "Appointments"
         appointmentName.delegate = self
         doctorName.delegate = self
         note.delegate = self
@@ -29,7 +31,6 @@ class AppointmentDetailViewController: UIViewController, UITextFieldDelegate
         {
             retrieveData()
         }
-        super.viewDidLoad()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool

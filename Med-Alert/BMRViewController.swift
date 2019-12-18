@@ -21,6 +21,7 @@ class BMRViewController: UIViewController, UITextFieldDelegate
     
     override func viewDidLoad()
     {
+        super.viewDidLoad()
         age.delegate = self
         feet.delegate = self
         inches.delegate = self
@@ -32,7 +33,6 @@ class BMRViewController: UIViewController, UITextFieldDelegate
         self.inches.keyboardType = UIKeyboardType.decimalPad
         self.pounds.keyboardType = UIKeyboardType.decimalPad
         self.age.keyboardType = UIKeyboardType.decimalPad
-        super.viewDidLoad()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool

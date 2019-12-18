@@ -20,6 +20,7 @@ class BMIViewController: UIViewController, UITextFieldDelegate
     var calc: String?
     override func viewDidLoad()
     {
+        super.viewDidLoad()
         feet.delegate = self
         inches.delegate = self
         pounds.delegate = self
@@ -36,7 +37,6 @@ class BMIViewController: UIViewController, UITextFieldDelegate
         self.feet.keyboardType = UIKeyboardType.decimalPad
         self.inches.keyboardType = UIKeyboardType.decimalPad
         self.pounds.keyboardType = UIKeyboardType.decimalPad
-        super.viewDidLoad()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool

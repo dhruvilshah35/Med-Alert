@@ -15,6 +15,7 @@ var globalname: String?
 class MyMedicineViewController: UIViewController
 {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyView: UIView!
     var medName = [String]()
     var timerList = [String]()
     var isComplete: Bool?
@@ -23,13 +24,14 @@ class MyMedicineViewController: UIViewController
     
     override func viewDidLoad()
     {
+        super.viewDidLoad()
+        self.title = "Medicines"
         medName = []
         timerList = []
         status = []
         uniqueString = []
         tableView.delegate = self
         tableView.dataSource = self
-        super.viewDidLoad()
         retrieveData()
         tableView.reloadData()
     }
@@ -55,6 +57,15 @@ class MyMedicineViewController: UIViewController
             status.append(data.value(forKey: "isComplete") as! Bool)
             uniqueString.append(data.value(forKey: "identifier") as! String)
         }
+        if medName == []
+        {
+            emptyView.isHidden = false
+            tableView.isHidden = true
+        }else
+        {
+            emptyView.isHidden = true
+            tableView.isHidden = false
+        }
         tableView.reloadData()
     }
 }
@@ -72,12 +83,12 @@ extension MyMedicineViewController: UITableViewDelegate, UITableViewDataSource
         {
             cell.medName.text = medName[indexPath.row]
             cell.timer.text = timerList[indexPath.row]
-            cell.backgroundColor = UIColor.green
+            cell.accessoryType = .checkmark
         } else
         {
             cell.medName.text = medName[indexPath.row]
             cell.timer.text = timerList[indexPath.row]
-            cell.backgroundColor = UIColor.white
+            cell.accessoryType = .none
         }
         return cell
     }
@@ -91,6 +102,7 @@ extension MyMedicineViewController: UITableViewDelegate, UITableViewDataSource
         }))
         alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { (action) in
             globalname = self.medName[indexPath.row]
+             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [self.uniqueString[indexPath.row]])
             self.deleteData()
         }))
         alert.addAction(UIAlertAction(title: "Complete", style: .default, handler: {
@@ -171,3 +183,4 @@ extension MyMedicineViewController: UITableViewDelegate, UITableViewDataSource
         }
     }
 }
+
