@@ -384,24 +384,24 @@
                                 <rect key="frame" x="0.0" y="474" width="375" height="255"/>
                                 <color key="backgroundColor" red="0.91223420600000005" green="0.91223420600000005" blue="0.91223420600000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="medLabels" rowHeight="80" id="CKj-Lg-B0g" customClass="AllTableViewCell" customModule="Med_Alert" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="medLabels" rowHeight="80" id="CKj-Lg-B0g" customClass="AllTableViewCell" customModule="Med_Alert" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CKj-Lg-B0g" id="phF-l5-09g">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Y3-Sc-Gta">
-                                                    <rect key="frame" x="10" y="9.9999999999999964" width="355" height="59.666666666666657"/>
+                                                    <rect key="frame" x="10" y="10" width="322" height="60"/>
                                                     <subviews>
                                                         <label opaque="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMI-Xp-0NB">
-                                                            <rect key="frame" x="20" y="20" width="206" height="19.666666666666671"/>
+                                                            <rect key="frame" x="20" y="20" width="173" height="20"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icz-pL-Epq">
-                                                            <rect key="frame" x="256" y="20" width="79" height="19.666666666666671"/>
+                                                            <rect key="frame" x="223" y="20" width="79" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="79" id="Ehz-sW-khQ"/>
                                                             </constraints>
@@ -438,6 +438,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="0Y3-Sc-Gta" secondAttribute="bottom" constant="10" id="W7T-FH-5ea"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.91223420600000005" green="0.91223420600000005" blue="0.91223420600000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="labelName" destination="oMI-Xp-0NB" id="wSe-sC-Vrz"/>
                                             <outlet property="selectedLabel" destination="icz-pL-Epq" id="Qhh-Hp-STK"/>
@@ -640,18 +641,18 @@
                                 <rect key="frame" x="0.0" y="108" width="375" height="371"/>
                                 <color key="backgroundColor" red="0.91223420600000005" green="0.91223420600000005" blue="0.91223420600000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="health" rowHeight="131" id="F7b-4p-zlb" customClass="AllTableViewCell" customModule="Med_Alert" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="health" rowHeight="131" id="F7b-4p-zlb" customClass="AllTableViewCell" customModule="Med_Alert" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="131"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F7b-4p-zlb" id="mDN-IV-Sng">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="131"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="131"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rGG-TZ-AXt">
-                                                    <rect key="frame" x="10" y="10" width="345" height="111"/>
+                                                    <rect key="frame" x="10" y="10" width="322" height="111"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gmx-pL-7tr">
-                                                            <rect key="frame" x="10" y="10" width="325" height="91"/>
+                                                            <rect key="frame" x="10" y="10" width="302" height="91"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>

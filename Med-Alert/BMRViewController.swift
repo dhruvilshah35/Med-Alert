@@ -26,7 +26,7 @@ class BMRViewController: UIViewController, UITextFieldDelegate
         feet.delegate = self
         inches.delegate = self
         pounds.delegate = self
-        
+        self.addDoneButtonOnKeyboard()
         self.title = "Basal Metabolic Rate"
         textView.text = "The basal metabolic rate (BMR) is the amount of energy needed while resting in a temperate environment when the digestive system is inactive."
         self.feet.keyboardType = UIKeyboardType.decimalPad
@@ -35,30 +35,33 @@ class BMRViewController: UIViewController, UITextFieldDelegate
         self.age.keyboardType = UIKeyboardType.decimalPad
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    func addDoneButtonOnKeyboard()
     {
-        let nextTag = textField.tag + 1
-        if let nextResponder = textField.superview?.viewWithTag(nextTag)
-        {
-            nextResponder.becomeFirstResponder()
-        }
-        else
-        {
-            textField.resignFirstResponder()
-        }
-        return true
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        doneToolbar.barStyle = UIBarStyle.default
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: Selector(("doneButtonAction")))
+        
+        var items = [UIBarButtonItem]()
+        items.append(flexSpace)
+        items.append(done)
+        
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        self.feet.inputAccessoryView = doneToolbar
+        self.inches.inputAccessoryView = doneToolbar
+        self.pounds.inputAccessoryView = doneToolbar
+        self.age.inputAccessoryView = doneToolbar
     }
     
-    func configureTapGesture()
+    @objc func doneButtonAction()
     {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(BMRViewController.handleTap))
-        tap.cancelsTouchesInView = false;
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc func handleTap()
-    {
-        view.endEditing(true)
+        self.feet.resignFirstResponder()
+        self.inches.resignFirstResponder()
+        self.pounds.resignFirstResponder()
+        self.age.resignFirstResponder()
     }
     
     @IBAction func maleButton(_ sender: Any)

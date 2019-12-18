@@ -24,7 +24,7 @@ class BMIViewController: UIViewController, UITextFieldDelegate
         feet.delegate = self
         inches.delegate = self
         pounds.delegate = self
-        
+         self.addDoneButtonOnKeyboard()
         self.title = calc ?? ""
         if calc == "Body Mass Index"
         {
@@ -38,31 +38,32 @@ class BMIViewController: UIViewController, UITextFieldDelegate
         self.inches.keyboardType = UIKeyboardType.decimalPad
         self.pounds.keyboardType = UIKeyboardType.decimalPad
     }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+  
+    func addDoneButtonOnKeyboard()
     {
-        let nextTag = textField.tag + 1
-        if let nextResponder = textField.superview?.viewWithTag(nextTag)
-        {
-            nextResponder.becomeFirstResponder()
-        }
-        else
-        {
-            textField.resignFirstResponder()
-        }
-        return true
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        doneToolbar.barStyle = UIBarStyle.default
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: Selector(("doneButtonAction")))
+        
+        var items = [UIBarButtonItem]()
+        items.append(flexSpace)
+        items.append(done)
+        
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        self.feet.inputAccessoryView = doneToolbar
+        self.inches.inputAccessoryView = doneToolbar
+        self.pounds.inputAccessoryView = doneToolbar
     }
     
-    func configureTapGesture()
+    @objc func doneButtonAction()
     {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(BMIViewController.handleTap))
-        tap.cancelsTouchesInView = false;
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc func handleTap()
-    {
-        view.endEditing(true)
+        self.feet.resignFirstResponder()
+        self.inches.resignFirstResponder()
+        self.pounds.resignFirstResponder()
     }
     
     @IBAction func calculateButton(_ sender: Any)
