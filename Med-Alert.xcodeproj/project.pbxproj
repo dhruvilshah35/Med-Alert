@@ -115,7 +115,6 @@
 		2E7D971C23DF81E200B85BD6 /* plist */ = {
 			isa = PBXGroup;
 			children = (
-				2ED443102398341D0088781F /* Info.plist */,
 				2ECC8620239B854E00AC7BFE /* details.plist */,
 			);
 			path = plist;
@@ -149,6 +148,7 @@
 				2ED443012398341C0088781F /* AppDelegate.swift */,
 				2ED44338239872AB0088781F /* AllTableViewCell.swift */,
 				2ED443052398341C0088781F /* Main.storyboard */,
+				2ED443102398341D0088781F /* Info.plist */,
 				2ED4430B2398341D0088781F /* Assets.xcassets */,
 				2ED4430D2398341D0088781F /* LaunchScreen.storyboard */,
 				2ED443082398341C0088781F /* Med_Alert.xcdatamodeld */,
