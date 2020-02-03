@@ -19,3 +19,14 @@ IOS app that add medicine reminders and doctor's appointment and get notificatio
 
 # Requirements
 • Ios 12
+
+# Screenshots
+
+![Alt test](Screenshots/1.png)
+![Alt test](Screenshots/2.png)
+![Alt test](Screenshots/3.png)
+![Alt test](Screenshots/6.png)
+![Alt test](Screenshots/7.png)
+![Alt test](Screenshots/8.png)
+![Alt test](Screenshots/10.png)
+![Alt test](Screenshots/11.png)
